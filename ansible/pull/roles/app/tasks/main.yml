@@ -2,7 +2,7 @@
   become: true
   get_url:
     url: "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-{{ ansible_system }}-{{ ansible_architecture }}"
-    dest: "/usr/local/bin/docker-compose"
+    dest: "/usr/bin/docker"
     mode: '0755'
 
 - name: Create App Folder
