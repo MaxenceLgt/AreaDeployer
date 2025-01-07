@@ -23,6 +23,15 @@
     - /tmp/back.env
     - /tmp/mongo.env
 
+- name: Change ownership of app files to ar3m
+  become: true
+  ansible.builtin.file:
+    path: /app/Area
+    state: directory
+    owner: ar3m
+    group: ar3m
+    recurse: yes
+
 - name: Deploy App
   become: true
   community.docker.docker_compose_v2:
