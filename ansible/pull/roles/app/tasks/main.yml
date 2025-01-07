@@ -5,7 +5,7 @@
     state: directory
     owner: ar3m
     group: ar3m
-    mode: '0755'
+    mode: '0644'
 
 - name: Get ar3m app from main
   become: true
