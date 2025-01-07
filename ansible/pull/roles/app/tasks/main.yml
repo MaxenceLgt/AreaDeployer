@@ -11,7 +11,7 @@
   become: true
   git:
     repo: https://github.com/mlargeot/Area.git
-    dest: /app
+    dest: /app/Area
     version: main
 
 - name: Copy env files
