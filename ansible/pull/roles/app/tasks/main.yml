@@ -17,11 +17,12 @@
 - name: Copy env files
   become: true
   copy:
-    src: "{{ item }}"
-    dest: /app/Area/env/
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
   loop:
-    - /tmp/back.env
-    - /tmp/mongo.env
+    - { src: /tmp/back.env, dest: /app/Area/env/ }
+    - { src: /tmp/mongo.env, dest: /app/Area/env/ }
+    - { src: /tmp/front.env, dest: /app/Area/frontend/.env }
 
 - name: Change ownership of app files to ar3m
   become: true
