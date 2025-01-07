@@ -35,4 +35,4 @@
 - name: Deploy App
   become: true
   shell:
-    cmd: "docker-compose -f /app/Area/docker-compose.prod.yml up --build db server client_web -d"
+    cmd: "docker-compose -f /app/Area/docker-compose.prod.yml up --build -d db server client_web"
