@@ -1,0 +1,5 @@
+- name: Deploy application using Ansible Pull
+  hosts: localhost
+  become: true
+  roles:
+    - app
