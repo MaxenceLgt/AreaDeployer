@@ -1,0 +1,53 @@
+- name: Update VM
+  become: true
+  apt:
+    update_cache: true
+  
+- name: Upgrade VM
+  become: true
+  apt:
+    upgrade: "full"
+
+- name: Install basics package for any VM
+  become: true
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  loop:
+    - { name: git, state : present }
+    - { name: zip, state : present }
+    - { name: tar, state : present }
+    - { name: curl, state : present }
+    - { name: wget, state : present }
+    - { name: python3, state : present }
+    - { name: python3-pip, state : present }
+    - { name: python3-venv, state : present }
+    - { name: ansible, state : present }
+
+- name: Download Docker GPG Key
+  become: true
+  get_url:
+    url: https://download.docker.com/linux/debian/gpg
+    dest: /etc/apt/keyrings/docker.asc
+    mode: '0644'
+
+- name: Add Docker's official repository
+  become: true
+  shell: echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release && echo $VERSION_CODENAME) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+- name: Update apt cache
+  become: true
+  apt:
+    update_cache: yes
+
+- name: Install Docker Latest
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    - docker-buildx-plugin
+    - docker-compose-plugin
