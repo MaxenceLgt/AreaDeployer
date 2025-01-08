@@ -1,0 +1,27 @@
+- name: base
+  hosts: all
+  roles:
+    - base
+  tags:
+    - base
+
+- name: Flask Server
+  hosts: azure-vm
+  roles:
+    - webhooks
+  tags:
+    - hooks
+
+- name: Nginx
+  hosts: azure-vm
+  roles:
+    - nginx
+  tags:
+    - nginx
+
+- name: App Config
+  hosts: azure-vm
+  roles:
+    - app-config
+  tags:
+    - app-config
