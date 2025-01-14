@@ -12,7 +12,7 @@
   git:
     repo: https://github.com/mlargeot/Area.git
     dest: /app/Area
-    version: dev
+    version: feature/twitch_live
 
 - name: Copy env files
   become: true
