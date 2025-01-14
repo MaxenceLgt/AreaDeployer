@@ -23,6 +23,7 @@
     - { src: /tmp/back.env, dest: /app/Area/env/ }
     - { src: /tmp/mongo.env, dest: /app/Area/env/ }
     - { src: /tmp/front.env, dest: /app/Area/frontend/.env }
+    - { src: /tmp/expo.env, dest: /app/Area/.env }
 
 - name: Change ownership of app files to ar3m
   become: true
