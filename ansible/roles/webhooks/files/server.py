@@ -17,6 +17,7 @@ def webhook():
     try:
         command = [
             "ansible-pull",
+            "-v",
             "-U", "https://github.com/MaxenceLgt/AreaDeployer",
             "-C", "main",
             "-d", "/tmp/ansible",
