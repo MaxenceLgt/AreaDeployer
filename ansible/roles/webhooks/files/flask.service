@@ -3,11 +3,11 @@ Description=Flask Application
 After=network.target
 
 [Service]
-User=user
-WorkingDirectory=path_to_working_dir
-Environment="FLASK_APP=path_to_app.py"
+User=ar3m
+WorkingDirectory=/home/ar3m/hooks
+Environment="FLASK_APP=/home/ar3m/hooks/app/server.py"
 Environment="FLASK_ENV=development"
-ExecStart=path_to_flask_bin run --host 0.0.0.0 --port 5000
+ExecStart=/home/ar3m/hooks/venvs/bin/flask run --host 0.0.0.0 --port 8082
 Restart=always
 
 [Install]
