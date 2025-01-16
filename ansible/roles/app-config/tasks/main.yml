@@ -7,5 +7,7 @@
     group: "{{ item.group }}"
     mode: "{{ item.mode }}"
   loop:
-    # Env to copy
-    #- { src: ../files/file_to_copy, dest: /dest_to_copy/, owner: owner, group: group, mode: file_mode }
+    - { src: ../files/back.env, dest: /tmp/, owner: ar3m, group: ar3m, mode: '0644' }
+    - { src: ../files/mongo.env, dest: /tmp/, owner: ar3m, group: ar3m, mode: '0644' }
+    - { src: ../files/front.env, dest: /tmp/, owner: ar3m, group: ar3m, mode: '0644' }
+    - { src: ../files/expo.env, dest: /tmp/, owner: ar3m, group: ar3m, mode: '0644' }
