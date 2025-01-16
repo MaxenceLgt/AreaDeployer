@@ -7,12 +7,12 @@
     group: ar3m
     mode: '0644'
 
-- name: Get ar3m app from main
+- name: Get ar3m app from dev
   become: true
   git:
     repo: https://github.com/mlargeot/Area.git
     dest: /app/Area
-    version: feature/twitch_live
+    version: dev
 
 - name: Copy env files
   become: true
