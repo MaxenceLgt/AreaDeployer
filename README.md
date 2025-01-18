@@ -43,7 +43,7 @@ To deploy the entire CI/CD pipeline on your VM, you need to provide some mandato
 
 Depending on how your application works and how it needs to be started, you may need to create specific files to copy to the VM (e.g., environment files, Nginx configuration, etc.).  
 
-For more details, refer to the [Project Configuration Guide](https://github.com/MaxenceLgt/AreaDeployer/wiki).  
+For more details, refer to the [Project Configuration Guide](https://github.com/MaxenceLgt/AreaDeployer/wiki/AreaDeployer-%E2%80%90-Project-Integration).  
 
 ### Running the Ansible Playbook  
 
