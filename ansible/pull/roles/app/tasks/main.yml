@@ -12,7 +12,7 @@
   git:
     repo: https://github.com/mlargeot/Area.git
     dest: /app/Area
-    version: feature/strava
+    version: dev
 
 - name: Copy env files
   become: true
